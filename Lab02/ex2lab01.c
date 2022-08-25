@@ -20,17 +20,17 @@ int main(void){
 	scanf("%s", nomeArquivoSaida);											//SYSCALL
 	
 	// Abrimos o arquivo de entrada
-	FILE *entrada = fopen(nomeArquivoEntrada, "r");
+	FILE *entrada = fopen(nomeArquivoEntrada, "r");                                                                 //SYSCALL
 	if(entrada == NULL){
 		printf("Arquivo nao encontrado.");									//SYSCALL
-		return -1;
+		return -1;                                                                                              //SYSCALL
 	}
 	
 	// Criamos um arquivo de saida, do tipo 'w', para poder receber e escrever o conteudo lido do arquivo de entrada.
-	FILE *saida = fopen(nomeArquivoSaida, "w");
+	FILE *saida = fopen(nomeArquivoSaida, "w");                                                                     //SYSCALL
 	if(saida == NULL){
 		printf("Erro ao criar o arquivo");									//SYSCALL
-		return -1;
+		return -1;                                                                                              //SYSCALL
 	}
 	
 	while(true){
@@ -38,7 +38,7 @@ int main(void){
 		
 		// efetuamos a leitura de linha a linha do arquivo
 		// caso a leitura chegue ate o final do arquivo, ele retorna um ponteiro NULL
-		char *ptr = fgets(linha, 100, entrada);
+		char *ptr = fgets(linha, 100, entrada);                                                                 //SYSCALL
 		// se o ponteiro apontar para NULL, encerra o while
 		if(ptr == NULL)
 			break;
@@ -50,7 +50,7 @@ int main(void){
 	printf("\n'%s' foi copiado em um novo arquivo chamado '%s'", nomeArquivoEntrada, nomeArquivoSaida);		//SYSCALL
 	
 	// Fechamos os dois arquivos
-	fclose(entrada);
-	fclose(saida);	
+	fclose(entrada);                                                                                                //SYSCALL
+	fclose(saida);	                                                                                                //SYSCALL
 	
 }
