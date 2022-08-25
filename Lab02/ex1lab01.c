@@ -14,11 +14,11 @@ int main(void){
 	scanf("%s", nomeArquivo);												//SYSCALL
 	
 	// Abrimos o arquivo desejado passando o nome fornecido pelo usuario.
-	FILE *arquivo = fopen(nomeArquivo, "r");
+	FILE *arquivo = fopen(nomeArquivo, "r");                                                                                //SYSCALL
 	
 	if(arquivo == NULL){ // Se fopen nos retornar null...
 		printf("\nO arquivo nao foi encontrado.");									//SYSCALL
-		return -1;
+		return -1;                                                                                                      //SYSCALL
 	} else { // Caso tenha um arquivo com o nome fornecido...
 		printf("\nConteudo do arquivo '%s':\n\n", nomeArquivo);								//SYSCALL
 		
@@ -26,7 +26,7 @@ int main(void){
 			char linha[100]; // criamos um vetor de caracteres para armazenar o conteudo das linhas do arquivo
 			// efetuamos a leitura de linha a linha do arquivo
 			// caso a leitura chegue ate o final do arquivo, ele retorna um ponteiro NULL
-			char *ptr = fgets(linha, 100, arquivo);
+			char *ptr = fgets(linha, 100, arquivo);                                                                 //SYSCALL
 			// se o ponteiro apontar para NULL, encerra o while
 			if(ptr == NULL)
 				break;
@@ -37,7 +37,7 @@ int main(void){
 	}
 	
 	// Fechamos o arquivo que foi aberto
-	fclose(arquivo);
+	fclose(arquivo);                                                                                                        //SYSCALL
 	
-	return 0;
+	return 0;                                                                                                               //SYSCALL
 }
