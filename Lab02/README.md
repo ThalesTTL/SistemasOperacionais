@@ -39,9 +39,9 @@
 
 <h3>Perguntas e Respostas</h3>
 <p>1) Identifique no seu programa as linhas de comando onde ocorrem chamadas de sistemas ao SO.</p>
-<p><b>R: Linhas com chamadas de sistema ao SO foram sinalizadas nos comentários do código.</b></p>
+<p><b>R: Linhas com chamadas de sistema ao SO foram sinalizadas nos comentários do código. Linhas: 13, 14, 17, 20, 21, 23, 29, 33, 36, 40, 42, totalizando 11 SYSCALL.</b></p>
 <p>2) Quantas chamadas de sistemas foram realizadas?</p>
-<p><b>R: Foram realizadas 6 chamadas de sistema.</b></p>
+<p><b>R: Foram realizadas 11 chamadas de sistema.</b></p>
  
 <hr>
 
@@ -70,7 +70,7 @@
 
 <h3>Perguntas e Respostas</h3>
 <p>1) Identifique no seu programa as linhas de comando onde ocorrem chamadas de sistemas ao SO.</p>
-<p><b>R: Linhas com chamadas de sistema ao SO foram sinalizadas nos comentários do código.</b></p>
+<p><b>R: Linhas com chamadas de sistema ao SO foram sinalizadas nos comentários do código. Linhas: 16, 17, 19, 20, 23, 25, 26, 30, 32, 33, 41, 47, 50, 53, 54, totalizando 15 SYSCALL.</b></p>
 <p>2) Quantas chamadas de sistemas foram realizadas?</p>
-<p><b>R: Foram realizadas 8 chamadas de sistema.</b></p>
+<p><b>R: Foram realizadas 15 chamadas de sistema.</b></p>
 
