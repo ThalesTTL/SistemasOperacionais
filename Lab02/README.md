@@ -26,10 +26,10 @@
 <h4>Conteúdo do Arquivo</h4>
 <img src="readmefiles/entradaEx1.png"/>
 
-<h4>Teste de Execução 01</h4>
+<h4>Teste de Execução 01 [SUCESSO]</h4>
 <img src="readmefiles/execucaoEx1.png"/>
 
-<h4>Teste de Execução 02</h4>
+<h4>Teste de Execução 02 [ERRO]</h4>
 <img src="readmefiles/execucao2Ex1.png"/>
 
 <h3>Perguntas e Respostas</h3>
@@ -48,11 +48,19 @@
 <h4>Conteúdo do Arquivo de Entrada</h4>
 <img src=""/>
 
-<h4>Teste de Execução</h4>
+<h4>Teste de Execução 01 [SUCESSO]</h4>
 <img src=""/>
 
 <h4>Conteúdo do Arquivo de Saída</h4>
 <img src=""/>
+
+<h4>Teste de Execução 02 [ERRO ARQUIVO DE ENTRADA]</h4>
+<img src=""/>
+
+<h4>Teste de Execução 03 [ERRO ARQUIVO DE SAÍDA]</h4>
+<img src=""/>
+
+
 
 
 <h3>Perguntas e Respostas</h3>
