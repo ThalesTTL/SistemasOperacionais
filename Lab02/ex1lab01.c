@@ -10,17 +10,17 @@ Victor Silva Fernandes            TIA: 32163967
 int main(void){
 	
 	char nomeArquivo[100];
-	printf("Insira o nome do arquivo de entrada: ");
-	scanf("%s", nomeArquivo);
+	printf("Insira o nome do arquivo de entrada: ");									//SYSCALL
+	scanf("%s", nomeArquivo);												//SYSCALL
 	
 	// Abrimos o arquivo desejado passando o nome fornecido pelo usuario.
 	FILE *arquivo = fopen(nomeArquivo, "r");
 	
 	if(arquivo == NULL){ // Se fopen nos retornar null...
-		printf("\nO arquivo nao foi encontrado.");
+		printf("\nO arquivo nao foi encontrado.");									//SYSCALL
 		return -1;
 	} else { // Caso tenha um arquivo com o nome fornecido...
-		printf("\nConteudo do arquivo '%s':\n\n", nomeArquivo);
+		printf("\nConteudo do arquivo '%s':\n\n", nomeArquivo);								//SYSCALL
 		
 		while(true){
 			char linha[100]; // criamos um vetor de caracteres para armazenar o conteudo das linhas do arquivo
@@ -30,7 +30,7 @@ int main(void){
 			// se o ponteiro apontar para NULL, encerra o while
 			if(ptr == NULL)
 				break;
-			printf("%s", linha); // imprimimos a linha
+			printf("%s", linha); // imprimimos a linha								//SYSCALL
 		}
 		
 		printf("\n\nFim da leitura do arquivo '%s'.", nomeArquivo);
