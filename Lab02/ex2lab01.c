@@ -36,15 +36,15 @@ int main(void){
 	while(true){
 		char linha[100]; // criamos um vetor de caracteres para armazenar o conteudo das linhas do arquivo
 		
-			// efetuamos a leitura de linha a linha do arquivo
-			// caso a leitura chegue ate o final do arquivo, ele retorna um ponteiro NULL
-			char *ptr = fgets(linha, 100, entrada);
-			// se o ponteiro apontar para NULL, encerra o while
-			if(ptr == NULL)
-				break;
-			
-			// imprimimos a linha no arquivo de saida.
-			fprintf(saida, "%s", linha);
+		// efetuamos a leitura de linha a linha do arquivo
+		// caso a leitura chegue ate o final do arquivo, ele retorna um ponteiro NULL
+		char *ptr = fgets(linha, 100, entrada);
+		// se o ponteiro apontar para NULL, encerra o while
+		if(ptr == NULL)
+			break;
+
+		// imprimimos a linha no arquivo de saida.
+		fprintf(saida, "%s", linha);
 		
 	}
 	printf("\n'%s' foi copiado em um novo arquivo chamado '%s'", nomeArquivoEntrada, nomeArquivoSaida);
