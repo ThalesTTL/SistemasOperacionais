@@ -1,3 +1,9 @@
+/*
+Luiz Gabriel Profirio Mendes      TIA: 42082293
+Thales Torres Lopes               TIA: 32135513
+Victor Silva Fernandes            TIA: 32163967
+*/ 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
