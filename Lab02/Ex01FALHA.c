@@ -1,4 +1,9 @@
 /*
+  Esse código foi criado em aula e não apresentou os resultados 
+  esperados, desconsiderá-lo para correção da atividade.
+*/
+
+/*
 Luiz Gabriel Profirio Mendes      TIA: 42082293
 Thales Torres Lopes               TIA: 32135513
 Victor Silva Fernandes            TIA: 32163967
