@@ -10,3 +10,4 @@
  ## Exercício 01
  
  ## Exercício 02
+ Foram realizadas 8 chamadas de sistema no máximo no andamento do código.
