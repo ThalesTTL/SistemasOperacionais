@@ -13,23 +13,23 @@ int main(void){
 	char nomeArquivoEntrada [100];
 	char nomeArquivoSaida [100];
 	
-	printf("Insira o nome do arquivo de entrada: ");
-	scanf("%s", nomeArquivoEntrada);
+	printf("Insira o nome do arquivo de entrada: ");								//SYSCALL
+	scanf("%s", nomeArquivoEntrada);										//SYSCALL
 	
-	printf("Insira o nome do arquivo de saida: ");
-	scanf("%s", nomeArquivoSaida);
+	printf("Insira o nome do arquivo de saida: ");									//SYSCALL
+	scanf("%s", nomeArquivoSaida);											//SYSCALL
 	
 	// Abrimos o arquivo de entrada
 	FILE *entrada = fopen(nomeArquivoEntrada, "r");
 	if(entrada == NULL){
-		printf("Arquivo nao encontrado.");
+		printf("Arquivo nao encontrado.");									//SYSCALL
 		return -1;
 	}
 	
 	// Criamos um arquivo de saida, do tipo 'w', para poder receber e escrever o conteudo lido do arquivo de entrada.
 	FILE *saida = fopen(nomeArquivoSaida, "w");
 	if(saida == NULL){
-		printf("Erro ao criar o arquivo");
+		printf("Erro ao criar o arquivo");									//SYSCALL
 		return -1;
 	}
 	
@@ -44,10 +44,10 @@ int main(void){
 			break;
 
 		// imprimimos a linha no arquivo de saida.
-		fprintf(saida, "%s", linha);
+		fprintf(saida, "%s", linha);										//SYSCALL
 		
 	}
-	printf("\n'%s' foi copiado em um novo arquivo chamado '%s'", nomeArquivoEntrada, nomeArquivoSaida);
+	printf("\n'%s' foi copiado em um novo arquivo chamado '%s'", nomeArquivoEntrada, nomeArquivoSaida);		//SYSCALL
 	
 	// Fechamos os dois arquivos
 	fclose(entrada);
