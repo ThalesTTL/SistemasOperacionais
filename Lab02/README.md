@@ -43,24 +43,22 @@
 <h3>Testes de Execução</h3>
 
 <h4>Código</h4>
-<img src=""/>
+<img src="readmefiles/codigoEx2.png"/>
 
 <h4>Conteúdo do Arquivo de Entrada</h4>
-<img src=""/>
+<img src="readmefiles/entradaEx1.png"/>
 
 <h4>Teste de Execução 01 [SUCESSO]</h4>
-<img src=""/>
+<img src="readmefiles/execucao01Ex2.png"/>
 
 <h4>Conteúdo do Arquivo de Saída</h4>
-<img src=""/>
+<img src="readmefiles/saidaEx2.png"/>
 
 <h4>Teste de Execução 02 [ERRO ARQUIVO DE ENTRADA]</h4>
-<img src=""/>
+<img src="readmefiles/execucao02Ex2.png"/>
 
 <h4>Teste de Execução 03 [ERRO ARQUIVO DE SAÍDA]</h4>
-<img src=""/>
-
-
+<img src="readmefiles/execucao03Ex2.png"/>
 
 
 <h3>Perguntas e Respostas</h3>
