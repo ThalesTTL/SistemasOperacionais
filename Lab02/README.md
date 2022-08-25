@@ -63,7 +63,7 @@
 
 <h3>Perguntas e Respostas</h3>
 <p>1) Identifique no seu programa as linhas de comando onde ocorrem chamadas de sistemas ao SO.</p>
-<p><b>R: Linhas sinalizadas nos comentários do código</b></p>
+<p><b>R: Linhas com chamadas de sistema ao SO foram sinalizadas nos comentários do código.</b></p>
 <p>2) Quantas chamadas de sistemas foram realizadas?</p>
-<p><b>R: [RESPOSTA AQUI]</b></p>
+<p><b>R: [RESPOSTA AQUI].</b></p>
 
