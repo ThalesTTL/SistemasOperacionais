@@ -33,7 +33,7 @@ int main(void){
 			printf("%s", linha); // imprimimos a linha								//SYSCALL
 		}
 		
-		printf("\n\nFim da leitura do arquivo '%s'.", nomeArquivo);
+		printf("\n\nFim da leitura do arquivo '%s'.", nomeArquivo);                                                     //SYSCALL
 	}
 	
 	// Fechamos o arquivo que foi aberto
