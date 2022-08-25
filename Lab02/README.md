@@ -1,5 +1,7 @@
 <h1> Sistemas Operacionais | Laboratório 02 </h1>
 
+<hr>
+
 <h2>Integrantes do Grupo</h2>
 <ul>
   <li>Thales Torres Lopes | TIA: 32135513</li>
@@ -9,12 +11,15 @@
   <li>Victor Silva Fernandes | TIA: 32163967</li>
 </ul>
 
+<hr>
 
 <h2>IDE e Compilação</h2>
 
 <p><b>Ambos os exercícios foram desenvolvidos e executados no mesmo ambiente.</b></p>
 <p>IDE: Dev-C++</p>
 <p>Compilador: TDM-GCC 4.9.2 64-bit Release</p>
+
+<hr>
 
 <h2>Exercício 01</h2>
 
@@ -38,6 +43,8 @@
 <p>2) Quantas chamadas de sistemas foram realizadas?</p>
 <p><b>R: [RESPOSTA AQUI].</b></p>
  
+<hr>
+
 <h2>Exercício 02</h2>
 
 <h3>Testes de Execução</h3>
