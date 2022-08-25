@@ -1,4 +1,4 @@
-# SistemasOperacionais
+# Sistemas Operacionais
 Laboratório de Sistemas Operacionais - Mackenzie
 
 # Integrantes do Grupo 
