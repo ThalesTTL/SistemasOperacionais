@@ -37,7 +37,7 @@
 <h3>Perguntas e Respostas</h3>
 
 <p>1)Rode o programa anterior para valores grandes de n. As mensagens sempre estarão ordenadas pelo valor de i?</p>
-<p><b>R: As mensagens sempre estão ordenadas pois o i só aumenta por mieo do 'for', que aumenta de 1 em 1 com o comando de 'i++'.</b></p>
+<p><b>R: As mensagens sempre estão ordenadas pois o i só aumenta por meio do 'for', que aumenta de 1 em 1 com o comando de 'i++'.</b></p>
 
 <p>2) O que acontece se o programa anterior escreve-se as mensagens para sys.stdout, usando print, ao invés de para sys.stderr?</p>
 <p><b>R: Não acontece nada, ele continua imprimindo no mesmo lugar.</b></p>
