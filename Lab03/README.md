@@ -13,7 +13,7 @@
 
 <hr>
 
-<h2>Código Analisado</h2>
+<h3>Código Analisado (Questão 1)</h3>
 <code><pre>
   #include <stdio.h>
   #include <stdlib.h>
@@ -34,7 +34,28 @@
   }
 </pre></code>
 
-<h3>Perguntas e Respostas</h3>
+<h4>Código Analisado (Questão 2)</h4>
+<code><pre>
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <unistd.h>
+  int main (int argc, char *argv[]) {
+    pid_t childpid = 0;
+    int i, n;
+    if (argc != 2){ /* check for valid number of command-line arguments */
+      fprintf(stderr, "Usage: %s processes\n", argv[0]);
+      return 1;
+    }
+    n = atoi(argv[1]);
+    for (i = 1; i < n; i++)
+      if (childpid = fork())
+      break;
+    fprintf(stdout, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n", i, (long)getpid(), (long)getppid(), (long)childpid);
+    return 0;
+  }
+</pre></code>
+
+<h5>Perguntas e Respostas</h5>
 
 <p>1)Rode o programa anterior para valores grandes de n. As mensagens sempre estarão ordenadas pelo valor de i?</p>
 <p><b>R: As mensagens sempre estão ordenadas pois o i só aumenta por meio do 'for', que aumenta de 1 em 1 com o comando de 'i++'.</b></p>
