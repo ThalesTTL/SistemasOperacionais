@@ -1,4 +1,4 @@
-<h1> Sistemas Operacionais | Laboratório 02 </h1>
+<h1> Sistemas Operacionais | Laboratório 02a </h1>
 
 <hr>
 
