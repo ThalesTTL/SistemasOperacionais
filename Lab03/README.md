@@ -15,9 +15,9 @@
 
 <h3>Código Analisado (Questão 1)</h3>
 <code><pre>
-  #include <stdio.h>
-  #include <stdlib.h>
-  #include <unistd.h>
+  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+  #include &lt;unistd.h&gt;
   int main (int argc, char *argv[]) {
     pid_t childpid = 0;
     int i, n;
@@ -34,11 +34,11 @@
   }
 </pre></code>
 
-<h4>Código Analisado (Questão 2)</h4>
+<h3>Código Analisado (Questão 2)</h3>
 <code><pre>
-  #include <stdio.h>
-  #include <stdlib.h>
-  #include <unistd.h>
+  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+  #include &lt;unistd.h&gt;
   int main (int argc, char *argv[]) {
     pid_t childpid = 0;
     int i, n;
