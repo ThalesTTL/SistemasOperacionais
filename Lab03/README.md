@@ -13,7 +13,7 @@
 
 <hr>
 
-<h3>Código Analisado (Questão 1)</h3>
+<h4>Código Analisado (Questão 1)</h4>
 <code><pre>
   #include &lt;stdio.h&gt;
   #include &lt;stdlib.h&gt;
@@ -34,7 +34,7 @@
   }
 </pre></code>
 
-<h3>Código Analisado (Questão 2)</h3>
+<h4>Código Analisado (Questão 2)</h4>
 <code><pre>
   #include &lt;stdio.h&gt;
   #include &lt;stdlib.h&gt;
