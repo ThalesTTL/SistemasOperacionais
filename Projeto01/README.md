@@ -1,1 +1,9 @@
-Entrega do projeto 01, que consiste em resolver o problema dos filósofos.
+/*
+ *  Luiz Gabriel Profirio Mendes      TIA: 42082293
+ *  Thales Torres Lopes               TIA: 32135513
+ *  Victor Silva Fernandes            TIA: 32163967
+ */
+ 
+Entrega do projeto 01, que consiste em resolver o problema da mesa dos filósofos.
+
+O arquivo 'filosofosC.c' é um código incompleto feito em C, ja a pasta 
