@@ -4,7 +4,7 @@
  *  Victor Silva Fernandes            TIA: 32163967
 
  
-Entrega do projeto 01, que consiste em resolver o problema da mesa dos filósofos.
+> Entrega do projeto 01, que consiste em resolver o problema da mesa dos filósofos.
 
-O arquivo 'filosofosC.c' é um código incompleto feito em C, já a pasta 'Jantar dos Filósofos - Java' possui o código em java, testado e comentado.
+> O arquivo 'filosofosC.c' é um código incompleto feito em C, já a pasta 'Jantar dos Filósofos - Java' possui o código em java, testado e comentado.
 O código foi criado e rodado em Windows.
