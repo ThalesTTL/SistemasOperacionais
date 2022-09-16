@@ -36,7 +36,7 @@ public class Teste {
 		Thread thread4 = new Thread(filosofo4);
 		Thread thread5 = new Thread(filosofo5);
 		
-		// Iniciamos cada uma das Threads, que chamará o método run() de cada Filósofo.
+		// Iniciamos cada uma das Threads, que chamará o método run() de cada filósofo.
 		thread1.start();
 		thread2.start();
 		thread3.start();
