@@ -20,7 +20,7 @@
 <ul>
     <li>Ter o Java 18 instalado na sua máquina.</li>
     <ul>
-        <li>Você pode realizar o download clicando <a href="https://www.oracle.com/java/technologies/downloads/">aqui</a>. Você pode selecionar o download específico para o seu sistema operacional.</li>
+        <li>Você pode realizar o download clicando <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">aqui</a>. Você pode selecionar o download específico para o seu sistema operacional.</li>
     </ul>
     
 </ul>
