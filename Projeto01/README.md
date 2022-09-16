@@ -6,5 +6,5 @@
  
 Entrega do projeto 01, que consiste em resolver o problema da mesa dos filósofos.
 
-O arquivo 'filosofosC.c' é um código incompleto feito em C, já a pasta Jantas dos Filosofos possui o código em java, documentando e comentado.
+O arquivo 'filosofosC.c' é um código incompleto feito em C, já a pasta Jantas dos Filosofos possui o código em java, testado e comentado.
 O código foi criado e rodado em Windows.
