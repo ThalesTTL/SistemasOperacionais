@@ -1,7 +1,7 @@
 # Sistemas Operacionais
 Laboratório de Sistemas Operacionais - Mackenzie
 
-# Integrantes do Grupo 
+## Integrantes do Grupo 
  Thales Torres Lopes                 TIA: 32135513
  
  Luiz Gabriel Profirio Mendes        TIA: 42082293
