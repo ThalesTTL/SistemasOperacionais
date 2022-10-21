@@ -21,6 +21,7 @@
 
 // 64kB stack
 #define FIBER_STACK 1024 * 64
+#define RAND_MAX 20
 
 struct c {
   int saldo;
@@ -73,8 +74,10 @@ int main(void) {
   // Todas as contas começam com saldo 100
   from.saldo = 100;
   to.saldo = 100;
-  printf("Transfering 10 to account c2\n");
-  valor = 10;
+  for(i=0; i<5; i++){
+    valor = rand() % 20; // talvez tenha que mudar
+    printf("Transfering %d to account c2\n", valor);  
+  }
 
   for (i = 0; i < 10; i++) {
     // Call the clone system call to create the child thread
