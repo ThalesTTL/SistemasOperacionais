@@ -11,42 +11,42 @@
 
 #define _GNU_SOURCE
 #include <malloc.h>
-#include <sched.h>
-#include <signal.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <time.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 
 // 64kB stack
 #define FIBER_STACK 1024 * 64
 
+int thread_count;
+
 struct c {
-  int saldo;
+  int balance;
 };
 
-typedef struct c conta;
-conta from, to;
-int valor, aux, count = 0;
+typedef struct c account;
+account from, to;
+int value, aux, count = 0;
 
 // The child thread will execute this function
-int transferencia(void *arg) {
-  if (from.saldo >= valor) {
-    from.saldo -= valor;
-    to.saldo += valor;
+int transfer(void *arg) {
+  if (from.balance >= value) {
+    from.balance -= value;
+    to.balance += value;
+    value = rand() % 20;
   }
   printf("Transfer done successfully!\n");
-  printf("Money in c1: %d\n", from.saldo);
-  printf("Money in c2: %d\n", to.saldo);
+  printf("Money in c1: %d\n", from.balance);
+  printf("Money in c2: %d\n", to.balance);
   return 0;
 }
 
 // Exchanges 'to' and 'from'
 void exchange() {
-  aux = from.saldo;
-  from.saldo = to.saldo;
-  to.saldo = aux;
+  aux = from.balance;
+  from.balance = to.balance;
+  to.balance = aux;
   count += 1;
 }
 
@@ -58,37 +58,45 @@ bool check() {
     return true;
   }
 }
-
-int main(void) {
+//---------------//---------------//---------------//---------------//---------------//
+int main(int argc, char* argv[]) {
   void *stack;
   pid_t pid;
   int i;
+  long thread;
+  pthread_t* thread_handles;
+  // Get number of threads from command line 
+  thread_count = strtol(argv[1], NULL, 10);      
+  thread_handles = malloc(thread_count*sizeof(pthread_t));
+  
   // Allocate the stack
-  stack = malloc(FIBER_STACK);
+  //stack = malloc(FIBER_STACK);
+
+  srand(time(NULL)); // inicializes the seed for rand as NULL for different results in different runs
 
   if (stack == 0) {
     perror("malloc: could not allocate stack");
     exit(1);
   }
-  // Todas as contas começam com saldo 100
-  from.saldo = 100;
-  to.saldo = 100;
-  for(i=0; i<5; i++){
-    valor = rand() % 20; // talvez tenha que mudar
-    printf("Transfering %d to account c2\n", valor);  
-  }
+  // All accounts start with 100 dollars
+  from.balance = 100;
+  to.balance = 100;
+  
+  value = rand() % 20; // Aleatory number between 0 and 20 that signifies the transfer value 
+  printf("Transfering %d to account c2\n", value);  
 
-  for (i = 0; i < 10; i++) {
+  /*for (i = 0; i < 100; i++) {
     // Call the clone system call to create the child thread
-    pid = clone(&transferencia, (char *)stack + FIBER_STACK,
+    pid = clone(&transfer, (char *)stack + FIBER_STACK,
                 SIGCHLD | CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, 0);
     if (pid == -1) {
       perror("clone");
       exit(2);
     }
   }
+  */ 
   // Free the stack
-  free(stack);
-  printf("Transfers done and memory freed.\n");
+  //printf("Transfers done and memory freed.\n");
+  //free(stack);
   return 0;
 }
