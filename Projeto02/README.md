@@ -42,7 +42,7 @@
 
 <h3>Execução</h3>
 <p>Como executar o programa</p>
-<!--Inserir aqui as instruções de compilação!-->
+<!--Para executar o programa, basta digitar './main 100' no prompt de comando.-->
 
 <h3>Resultados Obtidos</h3>
 <p>Comprovação de que os resultados propostos foram alcançados.</p>
