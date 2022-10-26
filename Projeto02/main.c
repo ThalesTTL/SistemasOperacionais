@@ -10,6 +10,10 @@
   https://hpc-tutorials.llnl.gov/posix/
 */
 
+//---------------//---------------//---------------//---------------//---------------//---------------//
+// Defines, Includes and creation of variables.                                                       //
+//---------------//---------------//---------------//---------------//---------------//---------------//
+
 #define _GNU_SOURCE
 #include <malloc.h>
 #include <stdbool.h>
@@ -22,7 +26,7 @@
 #define FIBER_STACK 1024 * 64
 
 // defines 100 threads to work 
-#define NUM_THREADS 100
+#define NUM_THREADS 5
 
 int thread_count;
 
@@ -31,23 +35,36 @@ struct c {
 };
 
 typedef struct c account;
-account from, to;
+account from, to, prints;
 int value, aux, count = 0;
+long tid[NUM_THREADS];
 
-// the thread will execute this function
+//---------------//---------------//---------------//---------------//---------------//---------------//
+// Functions that are used in the main.                                                               //
+//---------------//---------------//---------------//---------------//---------------//---------------//
+
+// function for printing the balance in both accounts
+void print_balance(){
+  printf("|--------------------------------------|\n");
+  printf("|Transfer done successfully!           |\n");
+  printf("|Balance in c1: %-5d                  |\n", from.balance);
+  printf("|Balance in c2: %-5d                  |\n", to.balance);
+  printf("|--------------------------------------|\n");
+  }
+  
+// the threads will execute this function
 void *transfer(void *arg) {
   if (from.balance >= value) {
     from.balance -= value;
     to.balance += value;
     value = rand() % 20;
   }
-  printf("Transfer done successfully!\n");
-  printf("Money in c1: %d\n", from.balance);
-  printf("Money in c2: %d\n", to.balance);
+  print_balance();
+  return 0;
 }
-
+  
 // exchanges 'to' and 'from'
-void exchange(c1,c2) {
+void exchange() {
   aux = from.balance;
   from.balance = to.balance;
   to.balance = aux;
@@ -62,40 +79,38 @@ bool check() {
     return true;
   }
 }
+
 //---------------//---------------//---------------//---------------//---------------//---------------//
+// Main function.                                                                                     //
+//---------------//---------------//---------------//---------------//---------------//---------------//
+
 int main(int argc, char* argv[]) {
   void *stack;
   pid_t pid;
   int i, rc;
   long t;
-  //pthread_t* thread_handles; 
   pthread_t threads[NUM_THREADS];
-  
-  /*
-  Get number of threads from command line 
-  thread_count = strtol(argv[1], NULL, 10);      
-  thread_handles = malloc(thread_count*sizeof(pthread_t));
-  */
   
   srand(time(NULL)); // inicializes the seed for rand as NULL for different results in different runs
 
   // all accounts start with 100 currency
   from.balance = 100;
   to.balance = 100;
+
+
   
   value = rand() % 20; // aleatory number between 0 and 20 that signifies the transfer value 
-  printf("Transfering %d\n", value); 
-
+  printf("Transfering %d...\n", value); 
   for (t = 0; t<thread_count; t++){
-    rc = pthread_create(&threads[t], NULL, transfer, (void *)t);
+    tid[t] = t;
+    rc = pthread_create(&threads[t], NULL, transfer, (void *) tid[t]);
     if(rc){
       printf("ERROR: return code from pthread_create() is %d\n", rc);
       exit(-1);
     }
   }
-
-  // free the malloc
-  printf("Transfers done and memory freed.\n");
+  // stop the threads
+  printf("Transfers done and memory freed!\n");
   pthread_exit(NULL);
   return 0;
 }
