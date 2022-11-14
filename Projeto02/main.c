@@ -21,21 +21,19 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+
+#include <unistd.h>
 
 // defines 100 threads to work
 #define NUM_THREADS 100
-
-// 64kB stack
-#define FIBER_STACK 1024 * 64
 
 struct c {
   int balance;
 };
 
 typedef struct c account;
-account from, to, prints;
-int value, aux, count = 0;
+account from, to;
+int value;
 long tid[NUM_THREADS];
 
 //---------------//---------------//---------------//---------------//---------------//---------------//
@@ -49,7 +47,6 @@ void print_success() {
   printf("|Balance in c1: %-5d                  |\n", from.balance);
   printf("|Balance in c2: %-5d                  |\n", to.balance);
   printf("|--------------------------------------|\n\n\n");
-  printf("Transfering %d...\n", value);
 }
 
 // function for printing the balance in both accounts when transfer fails
@@ -59,20 +56,19 @@ void print_fail() {
   printf("|Balance in c1: %-5d                  |\n", from.balance);
   printf("|Balance in c2: %-5d                  |\n", to.balance);
   printf("|--------------------------------------|\n\n\n");
-  printf("Transfering %d...\n", value);
 }
 
 // exchanges 'to' and 'from'
 void *transfer1(void *arg) {
   int i, countT1 = 0;
   while (1) {
+    printf("Account 1 -> Account 2\n");
+    printf("Transfering %d...\n", value);
     if (from.balance >= value) {
       from.balance -= value;
       to.balance += value;
-
-      printf("Account 1 -> Account 2\n");
-      printf("Transfering %d...\n", value);
       print_success();
+    
       value = (rand() % 20) + 1; // recalculates the value from 1 to 20
       break;
     } else if (countT1 > rand() % 5) {
@@ -80,7 +76,7 @@ void *transfer1(void *arg) {
       break;
     }
     countT1++;
-    sleep(2);
+    usleep(1000);
   }
   return 0;
 }
@@ -88,13 +84,13 @@ void *transfer1(void *arg) {
 void *transfer2(void *arg) {
   int i, countT2 = 0;
   while (1) {
+    printf("Account 2 -> Account 1\n");
+    printf("Transfering %d...\n", value);
     if (to.balance >= value) {
       to.balance -= value;
       from.balance += value;
-
-      printf("Account 2 -> Account 1\n");
-      printf("Transfering %d...\n", value);
       print_success();
+        
       value = (rand() % 20) + 1; // recalculates the value from 1 to 20
       break;
     } else if (countT2 > rand() % 5) {
@@ -103,7 +99,7 @@ void *transfer2(void *arg) {
       break;
     }
     countT2++;
-    sleep(2);
+    usleep(10000);
   }
   return 0;
 }
@@ -114,12 +110,11 @@ void *transfer2(void *arg) {
 
 int main(int argc, char *argv[]) {
   pid_t pid;
-  int i, rc, value;
+  int i, rc;
   void *status;
   long t;
   pthread_t threads[NUM_THREADS];
-  void *stack;
-  int array[NUM_THREADS];
+
 
   srand(time(NULL)); // inicializes the seed for rand as NULL for different
                      // results in different runs
@@ -128,16 +123,13 @@ int main(int argc, char *argv[]) {
   from.balance = 300;
   to.balance = 300;
 
-  value =
-      (rand() % 20) +
-      1; // aleatory number between 1 and 20 that signifies the transfer value
-  for (t = 0; t < NUM_THREADS; i++) {
-    t = t + 1;
+  value = (rand() % 20) + 1; // aleatory number between 1 and 20 that signifies the transfer value
+  for (t = 0; t < NUM_THREADS; t++) {
     tid[t] = t;
   }
 
   for (t = 0; t < NUM_THREADS; t++) {
-    if (t < NUM_THREADS / 2) { // divide the threads 50/50
+    if (t%2 == 1) { // divide the threads 50/50
       pthread_create(&threads[t], NULL, transfer1, (void *)tid[t]);
     } else {
       pthread_create(&threads[t], NULL, transfer2, (void *)tid[t]);
@@ -148,9 +140,14 @@ int main(int argc, char *argv[]) {
     pthread_join(threads[t], &status);
   }
 
+  printf("\n\n\nFinal Results:\n");
+  printf("|--------------------------------------|\n");
+  printf("|Balance in c1: %-5d                  |\n", from.balance);
+  printf("|Balance in c2: %-5d                  |\n", to.balance);
+  printf("|--------------------------------------|\n");
   // stop the threads
-  printf("Transfers done and memory freed!\n");
   pthread_exit(NULL);
+  printf("Transfers done and memory freed!\n");
 
   return 0;
 }
