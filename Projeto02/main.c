@@ -40,7 +40,7 @@ long tid[NUM_THREADS];
 // Functions that are used in the main. //
 //---------------//---------------//---------------//---------------//---------------//---------------//
 
-// function for printing the balance in both accounts when transfer succeds
+// function for printing the balance in both accounts when transfer success
 void print_success() {
   printf("|--------------------------------------|\n");
   printf("|Transfer done successfully!           |\n");

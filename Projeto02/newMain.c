@@ -21,9 +21,9 @@ long tid[NUM_THREADS]
 
 // Declaração de Funções
 
-// Imprime o saldo bancário de ambas as contas, quando a transferência for bem sucedida.
+// Imprime o saldo bancário de ambas as contas quando a transferência for bem-sucedida.
 void print_sucesso();
-// Imprime o saldo bancário de ambas as contas, quando a transferência falhar.
+// Imprime o saldo bancário de ambas as contas quando a transferência falhar.
 void print_falha();
 // Efetua uma transferência bancária da conta c1 para a conta c2.
 void *transferencia1(void *arg);
