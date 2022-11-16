@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
-// #include <malloc.h>
+#include <malloc.h>
 #include <stdbool.h>
 
 // Quantidade de Threads que existem no programa.
