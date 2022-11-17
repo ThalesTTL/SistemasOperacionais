@@ -87,7 +87,8 @@
     <ul><li><code>sudo apt install gcc</code></li></ul>
 </ol>
 
-<h3>Baixando este Repositório na sua Instância</h3>
+
+<h3>Baixando o repositório na sua instância</h3>
 <p>Para que você tenha acesso aos arquivos deste repositório, execute os comandos git abaixo.</p>
 <ol>
     <li>Crie uma paste no diretório raíz da sua instância.</li>
@@ -113,6 +114,21 @@
 <p>Dentro do diretório Projeto02, execute o seguinte comando para executar o arquivo newMain.bin: </p>
 <p><code>./newMain.bin</code></p>
 
-<h3>Resultados Obtidos</h3>
-<p>Comprovação de que os resultados propostos foram alcançados.</p>
+<hr>
+
+<h2>Conclusão</h2>
+<p>Essa sessão busca exibir os resultados obtidos ao executar a aplicação e, por meio destes resultados, comprovar que o nosso código atende as exigências do projeto.</p>
 <!--Inserir aqui a comprovação dos resultados obtidos!-->
+<h3>Prints de Execução</h3>
+<img src="img/execucao1.png"/>
+<img src="img/execucao2.png"/>
+<hr>
+<h4>Sobre os prints de execução</h4>
+<p>Este programa executa 100 Threads, ou seja, ocorrem 100 transações a cada execução. Em razão da quantidade enorme de transações, optamos por exibir apenas o início e o fim da saída do programa, visto que as transações se modificam apenas no valor.</p>
+<p><b>Obs: </b>existe uma possibilidade de que os prints de transação saiam "embaralhados" na sua execução. Isso não significa que o programa não está funcionando. Muito pelo contrário, significa que as threads estão sendo executadas simultâneamente. Embora os prints saiam embaralhados, as transações estão sendo realizadas corretamente.</p>
+<hr>
+<h3>Como este código atende aos requisitos do projeto?<h3>
+<p>O grupo, através da linguagem C aliada a diversas bibliotecas, entre elas 'pthread.h', conseguiu solucionar a condição de corrida apresentada.</p>
+<p>Por meio da criação e inicialização de threads que executam as funções de transferência, pudemos comprovar através dos testes de execução, que ambas as contas podem enviar e receber dinheiro simultâneamente sem causar nenhum tipo de problema.</p> 
+<p>Além disso, foi criada uma consistência dentro das funções de transferência para que uma conta não efetue uma transferência caso não tenha saldo suficiente. Quando uma conta estiver sem saldo, ela irá aguardar uma quantidade de tempo para ter saldo suficiente para concluir a transação. Após o tempo determinado pelo algoritmo, caso aquela thread não consiga concluir a transação, a transação é cancelada.</p>
+<p>Todos esses pontos foram devidamente esclarecidos no nosso código fonte definitivo, newMain.c, através de comentários no código. A leitura é altamente recomendada para compreender os detalhes dessa implementação.</p>
