@@ -49,7 +49,7 @@ int main(int argc, char *argv[]){
         tid[t] = t;
     }
 
-    // Criamos 100 Threads
+    // Criamos 100 threads.
     // 50 threads executarão a função 'transferencia1()'
     // 50 threads executarão a função 'transferencia2()'
     for(long t = 0; t < NUM_THREADS; t++){
@@ -59,7 +59,7 @@ int main(int argc, char *argv[]){
             pthread_create(&threads[t], NULL, transferencia2, (void *)tid[t]);
     }
     
-    // Executamos as 100 threads
+    // Executamos as 100 threads.
     for(long t = 0; t < NUM_THREADS;  t++){
         pthread_join(threads[t], NULL);
     }
@@ -75,7 +75,7 @@ int main(int argc, char *argv[]){
 }
 
 void *transferencia1(void *arg){
-    // Quantidade de vezes que a thread tentou realizar uma transferência
+    // Quantidade de vezes que a thread tentou realizar uma transferência.
     int tentativas = 0;
 
     while(true){
@@ -97,13 +97,13 @@ void *transferencia1(void *arg){
             break;
         }
         tentativas++;
-        // A thread espera por 1s
+        // A thread espera por 1s.
         sleep(1);
     }
 }
 
 void *transferencia2(void *arg){
-    // Quantidade de vezes que a thread tentou realizar uma transferência
+    // Quantidade de vezes que a thread tentou realizar uma transferência.
     int tentativas = 0;
 
     while(true){
@@ -125,7 +125,7 @@ void *transferencia2(void *arg){
             break;
         }
         tentativas++;
-        // A thread espera por 1s
+        // A thread espera por 1s.
         sleep(1);
     }
 }
