@@ -124,7 +124,7 @@
 <img src="img/execucao2.png"/>
 <hr>
 <h4>Sobre os prints de execução</h4>
-<p>Este programa executa 100 Threads, ou seja, ocorrem 100 transações a cada execução. Em razão da quantidade enorme de transações, optamos por exibir apenas o início e o fim da saída do programa, visto que as transações se modificam apenas no valor.</p>
+<p>Este programa executa 100 threads, ou seja, ocorrem 100 transações a cada execução. Em razão da quantidade enorme de transações, optamos por exibir apenas o início e o fim da saída do programa, visto que as transações se modificam apenas no valor.</p>
 <p><b>Obs: </b>existe uma possibilidade de que os prints de transação saiam "embaralhados" na sua execução. Isso não significa que o programa não está funcionando. Muito pelo contrário, significa que as threads estão sendo executadas simultâneamente. Embora os prints saiam embaralhados, as transações estão sendo realizadas corretamente.</p>
 <hr>
 <h3>Como este código atende aos requisitos do projeto?</h3>
