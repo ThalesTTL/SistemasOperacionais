@@ -11,6 +11,10 @@
   https://alvinalexander.com/programming/printf-format-cheat-sheet/
 */
 
+//---------------//---------------//---------------//---------------//---------------//---------------//---------------//---------------//
+// For reference, this code was built before the final, translated version, it may have differences in its context and usability        //
+//---------------//---------------//---------------//---------------//---------------//---------------//---------------//---------------//
+
 //---------------//---------------//---------------//---------------//---------------//---------------//
 // Defines, Includes and creation of variables. //
 //---------------//---------------//---------------//---------------//---------------//---------------//
@@ -24,7 +28,7 @@
 
 #include <unistd.h>
 
-// defines 100 threads to work.
+// defines 100 threads to work
 #define NUM_THREADS 100
 
 struct c {
@@ -40,7 +44,7 @@ long tid[NUM_THREADS];
 // Functions that are used in the main. //
 //---------------//---------------//---------------//---------------//---------------//---------------//
 
-// function for printing the balance in both accounts when transfer success.
+// function for printing the balance in both accounts when transfer succeds
 void print_success() {
   printf("|--------------------------------------|\n");
   printf("|Transfer done successfully!           |\n");
@@ -49,7 +53,7 @@ void print_success() {
   printf("|--------------------------------------|\n\n\n");
 }
 
-// function for printing the balance in both accounts when transfer fails.
+// function for printing the balance in both accounts when transfer fails
 void print_fail() {
   printf("|--------------------------------------|\n");
   printf("|Transfer failed!                      |\n");
@@ -69,14 +73,14 @@ void *transfer1(void *arg) {
       to.balance += value;
       print_success();
     
-      value = (rand() % 20) + 1; // recalculates the value from 1 to 20.
+      value = (rand() % 20) + 1; // recalculates the value from 1 to 20
       break;
     } else if (countT1 > rand() % 5) {
       printf("Insuficient funds! Transfer aborted.\n");
       break;
     }
     countT1++;
-    usleep(1000);
+    usleep(100);
   }
   return 0;
 }
@@ -91,7 +95,7 @@ void *transfer2(void *arg) {
       from.balance += value;
       print_success();
         
-      value = (rand() % 20) + 1; // recalculates the value from 1 to 20.
+      value = (rand() % 20) + 1; // recalculates the value from 1 to 20
       break;
     } else if (countT2 > rand() % 5) {
       printf("Insuficient funds! Transfer aborted.\n");
@@ -99,7 +103,7 @@ void *transfer2(void *arg) {
       break;
     }
     countT2++;
-    usleep(10000);
+    usleep(100);
   }
   return 0;
 }
@@ -116,26 +120,26 @@ int main(int argc, char *argv[]) {
   pthread_t threads[NUM_THREADS];
 
 
-  srand(time(NULL)); // inicializes the seed for rand as NULL for different.
-                     // results in different runs.
+  srand(time(NULL)); // inicializes the seed for rand as NULL for different
+                     // results in different runs
 
-  // all accounts start with 300 currency.
+  // all accounts start with 300 currency
   from.balance = 300;
   to.balance = 300;
 
-  value = (rand() % 20) + 1; // aleatory number between 1 and 20 that signifies the transfer value.
+  value = (rand() % 20) + 1; // aleatory number between 1 and 20 that signifies the transfer value
   for (t = 0; t < NUM_THREADS; t++) {
     tid[t] = t;
   }
 
   for (t = 0; t < NUM_THREADS; t++) {
-    if (t%2 == 1) { // divide the threads 50/50.
+    if (t%2 == 1) { // divide the threads 50/50
       pthread_create(&threads[t], NULL, transfer1, (void *)tid[t]);
     } else {
       pthread_create(&threads[t], NULL, transfer2, (void *)tid[t]);
     }
   }
-  // iniciates the threads.
+  // iniciates the threads
   for (t = 0; t < NUM_THREADS; t++) {
     pthread_join(threads[t], &status);
   }
@@ -145,7 +149,7 @@ int main(int argc, char *argv[]) {
   printf("|Balance in c1: %-5d                  |\n", from.balance);
   printf("|Balance in c2: %-5d                  |\n", to.balance);
   printf("|--------------------------------------|\n");
-  // stop the threads.
+  // stop the threads
   pthread_exit(NULL);
   printf("Transfers done and memory freed!\n");
 
