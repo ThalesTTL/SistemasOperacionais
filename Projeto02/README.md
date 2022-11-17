@@ -127,7 +127,7 @@
 <p>Este programa executa 100 Threads, ou seja, ocorrem 100 transações a cada execução. Em razão da quantidade enorme de transações, optamos por exibir apenas o início e o fim da saída do programa, visto que as transações se modificam apenas no valor.</p>
 <p><b>Obs: </b>existe uma possibilidade de que os prints de transação saiam "embaralhados" na sua execução. Isso não significa que o programa não está funcionando. Muito pelo contrário, significa que as threads estão sendo executadas simultâneamente. Embora os prints saiam embaralhados, as transações estão sendo realizadas corretamente.</p>
 <hr>
-<h3>Como este código atende aos requisitos do projeto?<h3>
+<h3>Como este código atende aos requisitos do projeto?</h3>
 <p>O grupo, através da linguagem C aliada a diversas bibliotecas, entre elas 'pthread.h', conseguiu solucionar a condição de corrida apresentada.</p>
 <p>Por meio da criação e inicialização de threads que executam as funções de transferência, pudemos comprovar através dos testes de execução, que ambas as contas podem enviar e receber dinheiro simultâneamente sem causar nenhum tipo de problema.</p> 
 <p>Além disso, foi criada uma consistência dentro das funções de transferência para que uma conta não efetue uma transferência caso não tenha saldo suficiente. Quando uma conta estiver sem saldo, ela irá aguardar uma quantidade de tempo para ter saldo suficiente para concluir a transação. Após o tempo determinado pelo algoritmo, caso aquela thread não consiga concluir a transação, a transação é cancelada.</p>
