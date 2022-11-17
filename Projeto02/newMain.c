@@ -105,6 +105,7 @@ void *transferencia1(void *arg){
         // A thread espera por 1s.
         sleep(1);
     }
+    return 0;
 }
 
 void *transferencia2(void *arg){
@@ -133,6 +134,7 @@ void *transferencia2(void *arg){
         // A thread espera por 1s.
         sleep(1);
     }
+    return 0;
 }
 
 void print_sucesso(){
