@@ -7,7 +7,7 @@
 #include <time.h>
 #include <unistd.h>
 
-// Quantidade de Threads que existem no programa.
+// Quantidade de threads que existem no programa.
 #define NUM_THREADS 100
 
 // Representa as contas bancárias do nosso sistema.
@@ -17,7 +17,7 @@ typedef struct c{
 
 // Contas bancárias
 conta c1, c2;
-// Valor que será transferido entre contas durante uma transação.
+// Valor que será transferido entre as contas durante uma transação.
 int valorTransferencia;
 long tid[NUM_THREADS];
 
@@ -38,11 +38,11 @@ int main(int argc, char *argv[]){
     // Dessa forma, a cada execução o valor da semente de geração será diferente.
     srand(time(NULL));
 
-    // O saldo inicial das contas é de R$300,00
+    // O saldo inicial das contas é de R$300,00.
     c1.saldo = 300;
     c2.saldo = 300;
 
-    // A transferência será um valor entre 1 e 20
+    // A transferência será um valor entre 1 e 20.
     valorTransferencia = (rand() % 21);
 
     for(long t = 0; t < NUM_THREADS; t++){
