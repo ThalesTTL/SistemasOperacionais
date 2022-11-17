@@ -79,7 +79,7 @@
 </ol>
 
 <h3>Instalando os pacotes necessários na sua instância</h3>
-<p>Aqui, nós iremos realizar o download e instalar alguns pacotes necessários para que o programa seja compilado e executado adequadamente.</p>
+<p>Nesta parte, nós iremos realizar o download e instalar alguns pacotes necessários para que o programa seja compilado e executado adequadamente.</p>
 <ol>
     <li>Realize o download de pacotes de informação de todas as fontes configuradas.</li>
     <ul><li><code>sudo apt-get update</code></li></ul>
