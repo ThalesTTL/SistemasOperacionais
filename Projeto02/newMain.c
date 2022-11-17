@@ -7,6 +7,11 @@
 #include <time.h>
 #include <unistd.h>
 
+//---------------//---------------//---------------//---------------//---------------//---------------//---------------//---------------//
+// Para fim de documentação, este código é a versão final, traduzida, para o projeto final da matéria de Sistemas Operacionais.         //
+//---------------//---------------//---------------//---------------//---------------//---------------//---------------//---------------//
+
+
 // Quantidade de threads que existem no programa.
 #define NUM_THREADS 100
 
